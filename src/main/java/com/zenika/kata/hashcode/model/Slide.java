@@ -12,12 +12,23 @@ public class Slide {
     public Slide(Photo photo1, Photo photo2) {
         this.tags = new HashSet<>();
         this.photo1 = photo1;
-        if(photo1 != null) {
+        if (photo1 != null) {
             tags.addAll(photo1.tags);
         }
         this.photo2 = photo2;
-        if(photo2 != null) {
+        if (photo2 != null) {
             tags.addAll(photo2.tags);
         }
+    }
+
+    @Override
+    public String toString() {
+        String string = photo1.id.toString();
+
+        if (null != photo2) {
+            string += " " + photo2.id;
+        }
+
+        return string;
     }
 }
