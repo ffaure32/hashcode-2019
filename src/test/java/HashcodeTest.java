@@ -10,7 +10,6 @@ public class HashcodeTest {
 	@Test
 	public void hashcode() {
 		Reader reader = new Reader();
-		
 		List<Photo> photos = reader.readInputs("a_example.txt");
 	}
 }
