@@ -3,6 +3,7 @@ package com.zenika.kata.hashcode.model;
 import com.google.common.collect.Lists;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class SlideGroup {
@@ -29,7 +30,7 @@ public class SlideGroup {
     }
 
     public void reverse() {
-        slides = Lists.reverse(slides);
+        Collections.reverse(slides);
     }
 
     public void merge(SlideGroup other, boolean reverse1, boolean reverse2) {
@@ -41,6 +42,10 @@ public class SlideGroup {
             other.reverse();
         }
 
-        slides.addAll(other.slides);
+        try {
+            slides.addAll(other.slides);
+        } catch (Exception e) {
+            throw e;
+        }
     }
 }
