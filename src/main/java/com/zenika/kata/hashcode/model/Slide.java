@@ -4,17 +4,20 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Slide {
-    public final Photo photo1;
-    public final Photo photo2;
+    public Photo photo1;
+    public Photo photo2;
     public final Set<String> tags;
 
-    public Slide(Photo photo1, Photo photo2) {
+    public Slide(Photo photo1) {
         this.tags = new HashSet<>();
         this.photo1 = photo1;
         if(photo1 != null) {
             tags.addAll(photo1.tags);
         }
-        this.photo2 = photo2;
+    }
+
+    public void addPhoto2(Photo photo) {
+        this.photo2 = photo;
         if(photo2 != null) {
             tags.addAll(photo2.tags);
         }
