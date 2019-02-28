@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SlideShow {
+
     public final List<Slide> slides;
 
     public SlideShow() {

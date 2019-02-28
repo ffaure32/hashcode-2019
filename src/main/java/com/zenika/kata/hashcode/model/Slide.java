@@ -22,4 +22,15 @@ public class Slide {
             tags.addAll(photo2.tags);
         }
     }
+
+    @Override
+    public String toString() {
+        String string = photo1.id.toString();
+
+        if (null != photo2) {
+            string += " " + photo2.id;
+        }
+
+        return string;
+    }
 }
