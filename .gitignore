@@ -22,3 +22,6 @@ hs_err_pid*
 # Ignore IntelliJ files
 .idea
 *.iml
+
+
+src/main/resources/out/
