@@ -4,8 +4,6 @@ public class SlideGroupInterestFactor {
 
     public int score;
 
-    public SlideGroup first;
-
     public SlideGroup second;
 
     public boolean reverseFirst;

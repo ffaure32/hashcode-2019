@@ -79,11 +79,11 @@ public class HashcodeTest {
 
     @Test
     public void hashcodeInput22() {
-	    tata("a_example.txt", "a.txt");
-	    tata("b_lovely_landscapes.txt", "b.txt");
-	    tata("c_memorable_moments.txt", "c.txt");
+//	    tata("a_example.txt", "a.txt");
+//	    tata("b_lovely_landscapes.txt", "b.txt");
+//	    tata("c_memorable_moments.txt", "c.txt");
 	    tata("d_pet_pictures.txt", "d.txt");
-	    tata("e_shiny_selfies.txt", "e.txt");
+//	    tata("e_shiny_selfies.txt", "e.txt");
     }
 
     private void tata(String inputFile, String outputFile) {
@@ -96,6 +96,8 @@ public class HashcodeTest {
 
 
         List<Slide> slides = slideShow.slides;
+		slides = slides.stream().sorted((s1, s2) -> s2.tags.size() - s1.tags.size()).collect(Collectors.toList());
+
         List<SlideGroup> slideGroups = slides.stream()
             .map(SlideGroup::new)
             .collect(Collectors.toList());
@@ -123,7 +125,6 @@ public class HashcodeTest {
             SlideGroupInterestFactor bestInterest = null;
 
             int nbIter = 0;
-//            for (SlideGroup other : slideGroups) {
             for (int j = i + 1; j < slideGroups.size() - 1; j++) {
                 nbIter++;
 
@@ -135,7 +136,7 @@ public class HashcodeTest {
                     bestInterest = interest;
                 }
 
-                if (nbIter > 2000) {
+                if (nbIter > 5000) {
                     break;
                 }
             }

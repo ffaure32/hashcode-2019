@@ -42,10 +42,6 @@ public class SlideGroup {
             other.reverse();
         }
 
-        try {
-            slides.addAll(other.slides);
-        } catch (Exception e) {
-            throw e;
-        }
+        slides.addAll(other.slides);
     }
 }

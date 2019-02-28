@@ -31,7 +31,6 @@ public class InterestFactor {
         int score1 = computeInterestFactor(group1.last(), group2.first());
 
         score.score = score1;
-        score.first = group1;
         score.second = group2;
 
         score.reverseFirst = false;
