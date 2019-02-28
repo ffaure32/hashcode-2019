@@ -55,7 +55,7 @@ public class InputLoader {
         }
     }
 
-    public static void writeSlideShow(SlideShow slideShow) {
+    public static void writeSlideShow(SlideShow slideShow, String fileName) {
         List<String> lines = new ArrayList<>();
 
         lines.add(String.valueOf(slideShow.slides.size()));
@@ -65,7 +65,7 @@ public class InputLoader {
                 .collect(Collectors.toList())
         );
 
-        writeList("slideShow.txt", lines);
+        writeList(fileName, lines);
     }
 
 }
