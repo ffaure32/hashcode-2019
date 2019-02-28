@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Slide {
+
     public final Photo photo1;
     public final Photo photo2;
     public final Set<String> tags;
