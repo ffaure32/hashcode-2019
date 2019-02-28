@@ -104,6 +104,8 @@ public class HashcodeTest {
         // TODO : handle last slide
         toto(slideGroups);
         toto(slideGroups);
+        toto(slideGroups);
+        toto(slideGroups);
 
         slideShow.slides = slideGroups.stream()
             .flatMap(g -> g.slides.stream())
@@ -116,7 +118,6 @@ public class HashcodeTest {
     private void toto(List<SlideGroup> slideGroups) {
         int i = 0;
         while (i < slideGroups.size() - 1) {
-//            System.out.println(i + " " + slideGroups.size());
             SlideGroup slideGroup = slideGroups.get(i);
 
             SlideGroupInterestFactor bestInterest = null;
