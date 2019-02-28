@@ -1,11 +1,16 @@
 package com.zenika.kata.hashcode;
 
+import com.zenika.kata.hashcode.model.Slide;
+import com.zenika.kata.hashcode.model.SlideShow;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class InputLoader {
@@ -48,6 +53,19 @@ public class InputLoader {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static void writeSlideShow(SlideShow slideShow) {
+        List<String> lines = new ArrayList<>();
+
+        lines.add(String.valueOf(slideShow.slides.size()));
+        lines.addAll(
+            slideShow.slides.stream()
+                .map(Slide::toString)
+                .collect(Collectors.toList())
+        );
+
+        writeList("slideShow.txt", lines);
     }
 
 }
