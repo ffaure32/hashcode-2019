@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import com.zenika.kata.hashcode.InputLoader;
 import com.zenika.kata.hashcode.model.Orientation;
@@ -33,7 +34,24 @@ public class Reader {
 			}
 			photos.add(new Photo(i -1, o, tags));
 		}
-		return photos;
+		
+		
+		List<Photo> verticales = photos.stream().filter(p -> p.orientation.equals(Orientation.VERTICAL)).collect(Collectors.toList());
+		
+		verticales.sort((p1, p2) -> p1.tags.size() - p2.tags.size());
+		
+		List<Photo> finalPhotos = photos.stream().filter(p -> p.orientation.equals(Orientation.HORIZONTAL)).collect(Collectors.toList());
+		System.out.println(photos.size());
+		
+		for (int i=0; i<verticales.size() / 2; i++) {
+			finalPhotos.add(verticales.get(i));
+			if (i != verticales.size() - 1 - i) {
+				finalPhotos.add(verticales.get(verticales.size() - 1 - i));				
+			}
+		}
+		System.out.println(finalPhotos.size());
+		
+		return finalPhotos;
 	}
 	
 	
