@@ -5,7 +5,7 @@ import java.util.List;
 
 public class SlideShow {
 
-    public final List<Slide> slides;
+    public List<Slide> slides;
 
     public SlideShow() {
         this.slides = new ArrayList<>();

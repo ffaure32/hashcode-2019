@@ -1,5 +1,6 @@
 package com.zenika.kata.hashcode;
 
+import com.zenika.kata.hashcode.model.InterestFactor;
 import com.zenika.kata.hashcode.model.Slide;
 import com.zenika.kata.hashcode.model.SlideShow;
 
@@ -56,7 +57,10 @@ public class InputLoader {
     }
 
     public static void writeSlideShow(SlideShow slideShow, String fileName) {
-        List<String> lines = new ArrayList<>();
+
+    	System.out.println(fileName + ": " + InterestFactor.computeFullScore(slideShow.slides));
+    	
+    	List<String> lines = new ArrayList<>();
 
         lines.add(String.valueOf(slideShow.slides.size()));
         lines.addAll(

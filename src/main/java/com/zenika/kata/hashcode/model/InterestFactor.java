@@ -1,9 +1,8 @@
 package com.zenika.kata.hashcode.model;
 
-
 import com.google.common.collect.Sets;
-import org.graalvm.util.CollectionsUtil;
 
+import java.util.List;
 import java.util.Set;
 
 public class InterestFactor {
@@ -16,5 +15,13 @@ public class InterestFactor {
         int nbTagsIntersect = Intersect.size();
 
         return Math.min(Math.min(nbTags1 - nbTagsIntersect, nbTags2 - nbTagsIntersect), nbTagsIntersect);
+    }
+    
+    static public int computeFullScore(List<Slide> slides) {
+    	int score = 0;
+    	for (int i=0; i< slides.size() -1; i++) {
+    		score += computeInterestFactor(slides.get(i), slides.get(i+1));
+    	}
+    	return score;
     }
 }

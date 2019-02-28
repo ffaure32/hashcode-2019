@@ -5,6 +5,7 @@ import com.zenika.kata.hashcode.model.SlideShow;
 import org.junit.Test;
 
 import com.zenika.kata.hashcode.model.Photo;
+import com.zenika.kata.hashcode.reader.Calculator;
 import com.zenika.kata.hashcode.reader.Reader;
 
 public class HashcodeTest {
@@ -16,6 +17,8 @@ public class HashcodeTest {
 
 		SlideShow slideShow = new SlideShow();
 		slideShow.addPhotos(photos);
+		
+		slideShow.slides = Calculator.sortSlides(slideShow.slides);
 
 		InputLoader.writeSlideShow(slideShow, "slideshow1.txt");
 	}
@@ -29,6 +32,8 @@ public class HashcodeTest {
 		SlideShow slideShow = new SlideShow();
 		slideShow.addPhotos(photos);
 
+		slideShow.slides = Calculator.sortSlides(slideShow.slides);
+		
 		InputLoader.writeSlideShow(slideShow, "slideshow2.txt");
 	}
 	
@@ -39,6 +44,8 @@ public class HashcodeTest {
 
 		SlideShow slideShow = new SlideShow();
 		slideShow.addPhotos(photos);
+		
+		slideShow.slides = Calculator.sortSlides(slideShow.slides);
 
 		InputLoader.writeSlideShow(slideShow, "slideshow3.txt");
 	}
@@ -50,6 +57,8 @@ public class HashcodeTest {
 
 		SlideShow slideShow = new SlideShow();
 		slideShow.addPhotos(photos);
+		
+		slideShow.slides = Calculator.sortSlides(slideShow.slides);
 
 		InputLoader.writeSlideShow(slideShow, "slideshow4.txt");
 	}
@@ -61,6 +70,8 @@ public class HashcodeTest {
 
 		SlideShow slideShow = new SlideShow();
 		slideShow.addPhotos(photos);
+		
+		slideShow.slides = Calculator.sortSlides(slideShow.slides);
 
 		InputLoader.writeSlideShow(slideShow, "slideshow5.txt");
 	}
