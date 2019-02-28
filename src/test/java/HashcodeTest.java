@@ -117,17 +117,17 @@ public class HashcodeTest {
 
     private void toto(List<SlideGroup> slideGroups) {
         int i = 0;
-        while (i < slideGroups.size() - 1) {
+        while (i < slideGroups.size() - 2) {
             SlideGroup slideGroup = slideGroups.get(i);
 
             SlideGroupInterestFactor bestInterest = null;
 
             int nbIter = 0;
-            for (SlideGroup other : slideGroups) {
+//            for (SlideGroup other : slideGroups) {
+            for (int j = i + 1; j < slideGroups.size() - 1; j++) {
                 nbIter++;
-                if (nbIter == 1) {
-                    continue;
-                }
+
+                SlideGroup other = slideGroups.get(j);
 
                 SlideGroupInterestFactor interest = InterestFactor.computeInterestFactor(slideGroup, other, slideGroup.slides.size() < 2);
 
