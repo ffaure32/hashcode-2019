@@ -23,7 +23,7 @@ public class Reader {
 			String[] photoDesc = input.get(i).split(" ");
 			
 			Orientation o = Orientation.VERTICAL;
-			if (photoDesc[0] == "H") {
+			if (photoDesc[0].equals("H")) {
 				o = Orientation.HORIZONTAL;
 			}
 			

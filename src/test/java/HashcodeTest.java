@@ -7,9 +7,11 @@ import com.zenika.kata.hashcode.reader.Reader;
 
 public class HashcodeTest {
 
+	private List<Photo> photos;
+
 	@Test
 	public void hashcode() {
 		Reader reader = new Reader();
-		List<Photo> photos = reader.readInputs("a_example.txt");
+		photos = reader.readInputs("a_example.txt");
 	}
 }
