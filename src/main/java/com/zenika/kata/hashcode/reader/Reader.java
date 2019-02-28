@@ -31,7 +31,7 @@ public class Reader {
 			for (int j=2;j<Integer.parseInt(photoDesc[1])+2; j++) {
 				tags.add(photoDesc[j]);
 			}
-			photos.add(new Photo(i, o, tags));
+			photos.add(new Photo(i -1, o, tags));
 		}
 		return photos;
 	}
